@@ -21,7 +21,7 @@ WITH customer_tranformed AS (
 				WHEN monthly_income >= 500000 THEN 'High Income'
 			END AS income_category,
 			signup_date
-	FROM customers
+	FROM {{ref('customers_raw')}}
 )
 SELECT *,
 		CASE
